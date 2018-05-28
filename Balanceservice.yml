@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: Balance
+  labels:
+    app: Balance
+spec:
+  type: NodePort
+  ports:
+  - port: 8220
+    protocol: TCP
+  selector:
+    app: Balance
