@@ -32,10 +32,12 @@ class BalanceRestController {
 
 	public BalanceRestController(){}
 
+  //TEMPLATE METHOD START
    @RequestMapping(value="/{id}", method = RequestMethod.GET,produces = { "application/json"})
    @HystrixCommand(fallbackMethod = "fallbackOperation",commandProperties ={
 				@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="5000")
-			})
+			})			
+			
     public Response getBalance(@PathVariable("id") String id) throws Exception{
 		  Response resp = new Response();
 		  System.out.println("Service Invoked--------------------------");
@@ -49,6 +51,7 @@ class BalanceRestController {
 			  }
 	      return resp;
     }
+    //TEMPLATE METHOD END
     
     public static boolean isSetter(Method method){
 	   if(!method.getName().startsWith("set")) return false;
