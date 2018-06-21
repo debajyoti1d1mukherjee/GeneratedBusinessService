@@ -15,27 +15,27 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "alance"
+    "balance"
 })
 public class Response {
 
-    @JsonProperty("alance")
-    private String alance;
+    @JsonProperty("balance")
+    private String balance;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("alance")
-    public String getAlance() {
-        return alance;
+    @JsonProperty("balance")
+    public String getBalance() {
+        return balance;
     }
 
-    @JsonProperty("alance")
-    public void setAlance(String alance) {
-        this.alance = alance;
+    @JsonProperty("balance")
+    public void setBalance(String balance) {
+        this.balance = balance;
     }
 
-    public Response withAlance(String alance) {
-        this.alance = alance;
+    public Response withBalance(String balance) {
+        this.balance = balance;
         return this;
     }
 
@@ -61,7 +61,7 @@ public class Response {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(alance).append(additionalProperties).toHashCode();
+        return new HashCodeBuilder().append(balance).append(additionalProperties).toHashCode();
     }
 
     @Override
@@ -73,7 +73,7 @@ public class Response {
             return false;
         }
         Response rhs = ((Response) other);
-        return new EqualsBuilder().append(alance, rhs.alance).append(additionalProperties, rhs.additionalProperties).isEquals();
+        return new EqualsBuilder().append(balance, rhs.balance).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
 }

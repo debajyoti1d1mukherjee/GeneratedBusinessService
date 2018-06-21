@@ -19,18 +19,18 @@ import java.lang.reflect.Method;
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableHystrix
-public class BalanceServiceApplication {
+public class balanceServiceApplication {
     public static void main(String[] args){
-		SpringApplication.run(BalanceServiceApplication.class, args);
+		SpringApplication.run(balanceServiceApplication.class, args);
 		}
 }
 
 	
 	
 @RestController
-class BalanceRestController {
+class balanceRestController {
 
-	public BalanceRestController(){}
+	public balanceRestController(){}
 
   //TEMPLATE METHOD START
    @RequestMapping(value="/{id}", method = RequestMethod.GET,produces = { "application/json"})
@@ -38,7 +38,7 @@ class BalanceRestController {
 				@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="5000")
 			})			
 			
-    public Response getBalance(@PathVariable("id") String id) throws Exception{
+    public Response getbalance(@PathVariable("id") String id) throws Exception{
 		  Response resp = new Response();
 		  System.out.println("Service Invoked--------------------------");
 		  Class respClass = resp.getClass();
